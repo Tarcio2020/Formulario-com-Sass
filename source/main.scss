@@ -1,0 +1,61 @@
+@use './config/variaveis.scss';
+@use './config/reset.scss';
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: Roboto;
+}
+
+.container {
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    padding: 16px 0;
+    background-color: rgb(99, 255, 9);
+
+}
+
+
+.form-container {
+    height: calc(100vh - 70px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    @mixin elementoForm() {
+        padding: 8px;
+        display: block;
+        width: 100%;
+        margin-bottom: 16px;
+    }
+    
+    form {
+
+        width: 100%;
+        max-width: 480px;
+        margin-top: 40px;
+
+        input {
+            @include elementoForm();
+        }
+
+        input{
+            @include elementoForm()
+        }
+        
+        input, button {
+           
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid #000;
+            
+        }
+    }
+}
