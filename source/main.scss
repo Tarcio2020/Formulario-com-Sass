@@ -2,11 +2,18 @@
 @use './config/reset.scss';
 
 
+@mixin elementoForm($margin: 16px) {
+    padding: 8px;
+    display: block;
+    width: 100%;
+    margin-bottom: $margin;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-size: Roboto;
+    font-size: Roboto, sans-serif;
 }
 
 .container {
@@ -17,8 +24,9 @@
 
 header {
     padding: 16px 0;
-    background-color: rgb(99, 255, 9);
-
+    background-color: variaveis.$corPrincipal;
+    text-align: center;
+    color: #fff;
 }
 
 
@@ -28,34 +36,50 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
-    @mixin elementoForm() {
-        padding: 8px;
-        display: block;
-        width: 100%;
-        margin-bottom: 16px;
+    max-width: 760px;
+
+    h2 {
+        font-size: 48px;
+        text-align: center;
     }
-    
+
     form {
 
         width: 100%;
         max-width: 480px;
         margin-top: 40px;
 
-        input {
-            @include elementoForm();
+        label {
+            font-weight: bold;
+            cursor: pointer;
         }
 
-        input{
-            @include elementoForm()
-        }
-        
-        input, button {
-           
+        input {
+            @include elementoForm();
             background-color: transparent;
             border: none;
             border-bottom: 1px solid #000;
             
         }
+
+        button {
+            @include elementoForm();
+            background-color: variaveis.$corSecundaria;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            color: #fff;
+        }
+
     }
 }
+
+
+@media screen and (max-width:variaveis.$mobile) {
+    body {
+        background-color: yellow;
+    }
+
+}
+    
